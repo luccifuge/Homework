@@ -581,6 +581,7 @@ if uploaded_file is not None:
                                 st.image(icon_url, width=100)
 
                         with col2:
+                            st.write(curr_weather)
                             weather_stata = {
                                 "Температура": f"{curr_weather['temperature']:.1f} °C",
                                 "Ощущается как": f"{curr_weather['feels_like']:.1f} °C",
