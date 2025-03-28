@@ -11,6 +11,7 @@ from io import StringIO, BytesIO
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import json
 
 st.set_page_config(page_title="Temperature Analysis App", layout="wide")
 
@@ -581,7 +582,7 @@ if uploaded_file is not None:
                                 st.image(icon_url, width=100)
 
                         with col2:
-                            st.write(curr_weather)
+                            print(json.dumps(curr_weather, indent=4, ensure_ascii=False))
                             weather_stata = {
                                 "Температура": f"{curr_weather['temperature']:.1f} °C",
                                 "Ощущается как": f"{curr_weather['feels_like']:.1f} °C",
